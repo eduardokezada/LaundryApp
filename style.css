@@ -1,0 +1,174 @@
+
+
+html {
+    scroll-behavior: smooth;
+  height:100%;
+  }
+
+
+
+  p{
+    
+    color:black;
+  }
+
+
+
+
+ 
+
+h1{
+ 
+    text-align:center;
+ color:white;
+ 
+}
+
+h2{
+ 
+  text-align:center;
+  color:white;
+ 
+}
+
+h3{
+ 
+  text-align:center;
+  color:black;
+ 
+}
+
+
+
+
+.btn-primary{
+
+margin-right:100%;
+margin-bottom:20px;
+
+}
+
+.Icon{
+
+  border-radius:90%;
+  width:50px;
+  border:solid 1px white;
+  background:white;
+}
+
+
+
+  #Servicios{
+    padding:2%;
+    background: #66ccff;
+   
+  }
+
+
+ .col{
+  
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+#Precios{
+  padding : 2%;
+ 
+ background:#c0c0c0;
+
+}
+
+
+
+#Contacto{
+  padding : 2%;
+  background:  rgb(177, 31, 32);
+
+}
+
+.card-img-top{
+
+ 
+  width:100px;
+  height:250px;
+}
+.container-fluid{
+  padding: 0px;
+    background:silver;
+ overflow:hidden;
+}
+
+
+#Camisas{
+
+  display:block;
+}
+
+
+#Pantalones{
+
+  display:none;
+}
+
+
+#Trajes{
+
+  display:none;
+}
+
+
+#Otros{
+
+  display:none;
+}
+  .navbar{
+
+    
+  border-bottom:solid 1px #ff5050;
+  background-color: white;
+  opacity:0.9;
+      
+    }
+    
+
+    .card{
+      padding:1px;
+    }
+    .card:hover{
+      
+        border:solid 1px #ff5050;
+      background: linear-gradient(to right, #66ccff 0%, #0066cc 100%);
+        color:white;
+        
+        }
+
+
+
+    .navbar-nav>li:hover{
+      
+       border-bottom: solid 2px #ff5050;
+       }
+       
+       .navbar-nav > li{
+        
+         display: inline-block;
+        color:white;
+        padding:3px;
+       
+       }
+       
+       
+       nav .navbar-nav li a{
+         color: black ;
+      
+         }
+       
+         nav .navbar-nav li a:hover{
+           color: #0EA0D0 ;
+           }
+
+
+        

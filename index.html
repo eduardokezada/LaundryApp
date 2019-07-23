@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Lavanderia Puerto Plata</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/09209e6298.js"></script>
+
+    <!--JQuery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!--JS to go to sections-->
+<script>
+
+
+  let mainNavLinks = document.querySelectorAll("nav ul li a");
+let mainSections = document.querySelectorAll("main section");
+
+let lastId;
+let cur = [];
+
+window.addEventListener("scroll", event => {
+let fromTop = window.scrollY;
+
+mainNavLinks.forEach(link => {
+  let section = document.querySelector(link.hash);
+
+  if (
+    section.offsetTop <= fromTop &&
+    section.offsetTop + section.offsetHeight > fromTop
+  ) {
+    link.classList.add("current");
+  } else {
+    link.classList.remove("current");
+  }
+});
+});
+  </script>
+<!--JS to go to sections-->
+
+
+
+<script>
+
+
+function ShowTableCamisas() {
+
+  document.getElementById("Camisas").style.display = "block";
+  document.getElementById("Pantalones").style.display = "none";
+  document.getElementById("Trajes").style.display = "none";
+  document.getElementById("Otros").style.display = "none";
+}
+
+function ShowTablePantalones() {
+  document.getElementById("Camisas").style.display = "none";
+  document.getElementById("Pantalones").style.display = "block";
+  document.getElementById("Trajes").style.display = "none";
+  document.getElementById("Otros").style.display = "none";
+}
+
+function ShowTableTrajes() {
+  document.getElementById("Camisas").style.display = "none";
+  document.getElementById("Pantalones").style.display = "none";
+  document.getElementById("Trajes").style.display = "block";
+  document.getElementById("Otros").style.display = "none";
+}
+function ShowTableOtros() {
+  document.getElementById("Camisas").style.display = "none";
+  document.getElementById("Pantalones").style.display = "none";
+  document.getElementById("Trajes").style.display = "none";
+  document.getElementById("Otros").style.display = "block";
+}
+
+
+
+</script> 
+
+
+
+</head>
+
+
+
+<body>
+
+    <style type="text/css">
+
+ 
+      .tg  {border-collapse:collapse;border-spacing:1;border-color:white;table-layout:fixed;width:550px;margin-right:50px;}
+      .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#9ABAD9;color:#444;background-color:#EBF5FF;}
+      .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#9ABAD9;color:#fff;background-color:#409cff;}
+      .tg .tg-4kim{background-color:#9aff99;border-color:inherit;text-align:center;vertical-align:top}
+      .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+      .tg .tg-4m7p{background-color:#9aff99;border-color:inherit;text-align:center;vertical-align:top}
+      </style>
+   
+  
+<!-- Image and text -->
+<nav class="navbar  py-0 navbar-expand-sm py-md-0 shadow p-0.1 mb-0.1">
+     
+  
+  <a class="navbar-brand" href="#">
+    <img src="./img/Logo.png" alt="Logo" style="width:75%" >
+    
+  </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    
+     
+
+ <!-- Navbar links -->
+ <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar" >
+ 
+
+    <!-- Toggler/collapsibe Button -->
+ 
+        <ul class="navbar-nav ">
+           
+          <li class="nav-item">
+            <a class="nav-link" href="#Servicios">Servicios</a>
+          </li>
+        
+          <li class="nav-item">
+                <a class="nav-link" href="#Precios">Precios</a>
+              </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#Contacto">Contacto</a>
+          </li> 
+
+
+
+        </ul>
+      </div> 
+
+</nav>
+
+
+     <div class="container-fluid">
+
+
+     
+            <section id="Servicios" class="shadow p-7 mb-0 bg-blue rounded"> 
+               
+
+              <h3>
+                Servicios
+              </h3>
+            
+              
+            <div class="row">
+
+             
+
+                    <div class ="col ">
+                    
+                      
+                            
+                            <div class="card" style="width:300px">
+                                    <img class="card-img-top" src="./img/DryClean.jpg" alt="Card image">
+                                    <div class="card-body">
+                                      <h4 class="card-title">Lavado en Seco</h4>
+                                      <p class="card-text">Lavado de prendas sin mojarla</p>
+
+                                    </div>
+                                  </div>
+                 </div>
+                            
+                     <div class ="col">
+
+
+                            <div class="card" style="width:300px">
+                                    <img class="card-img-top" src="./img/Lavado.jpg" alt="Card image" >
+                                    <div class="card-body">
+                                      <h4 class="card-title">Lavado</h4>
+                                      <p class="card-text">Lavado de prendas segun sus necesidades</p>
+                                   
+                                    </div>
+                                  </div>
+                            
+                                    </div>
+        
+                                    <div class ="col">
+                            
+                                        <div class="card" style="width:300px">
+                                    <img class="card-img-top" src="./img/Planchado.jpg" alt="Card image" >
+                                    <div class="card-body">
+                                      <h4 class="card-title">Planchado</h4>
+                                      <p class="card-text">Plchando  de nivel profesional</p>
+                                     
+                                    </div>
+                                  </div>
+                            
+                                        </div>
+        
+        
+                                        <div class ="col">
+                            
+                                                <div class="card" style="width:300px">
+                                            <img class="card-img-top" src="./img/Express.jpg" alt="Card image">
+                                            <div class="card-body">
+                                              <h4 class="card-title">Servicio Express</h4>
+                                              <p class="card-text">Sus prendas estan listas el mismo dia de facturación</p>
+                                             
+                                            </div>
+                                          </div>
+                                    
+                                                </div>
+        
+
+             </section>
+
+
+             
+                            
+                     
+                                     
+                     
+<section id="Precios" class="shadow-lg p-7 mb-0 bg-white rounded">
+
+  <h3>
+    Precios
+</h3>  
+ 
+                       
+<div class="row">
+
+  
+
+        <div class ="col">
+               
+         <div>
+
+            <button button type="button" class="btn btn-primary" onclick="ShowTableCamisas()" >
+            <img src="./img/Camisas.png" class="Icon">Camisas
+            </button>
+
+        
+         </div>
+
+        
+         <div>
+          <button button type="button" class="btn btn-primary" onclick="ShowTablePantalones()" >
+            <img src="./img/Pantalon.png" class="Icon" >Pantalones
+          </button>
+         </div>
+           
+          
+<div>
+  <button button type="button" class="btn btn-primary" onclick="ShowTableTrajes()">
+    <img src="./img/Traje.png" class="Icon" >Trajes
+  </button>
+
+</div>
+
+
+<div>
+    <button button type="button" class="btn btn-primary"  onclick="ShowTableOtros()" >
+      <img src="./img/Cama.png" class="Icon" >Otros
+    </button>
+  
+  </div>
+          
+</div>
+
+</div>
+
+  <div class="row">
+
+<div class="col">
+      <div id="Camisas" >
+        
+          <table class="tg fixed">
+              <tr>
+                <th class="tg-0pky">Tipo</th>
+                <th class="tg-0pky">DryClean</th>
+                <th class="tg-0pky">Lavado y Planchado</th>
+                <th class="tg-0pky">Lavado</th>
+                <th class="tg-0pky">Planchado</th>
+              </tr>
+              <tr>
+                <td class="tg-4kim">Manga Larga</td>
+                <td class="tg-4kim">120</td>
+                <td class="tg-4kim">60</td>
+                <td class="tg-4kim">40</td>
+                <td class="tg-4kim">30</td>
+              </tr>
+              <tr>
+                <td class="tg-4m7p">Manga Corta</td>
+                <td class="tg-4m7p">120</td>
+                <td class="tg-4m7p">60</td>
+                <td class="tg-4m7p">40</td>
+                <td class="tg-4m7p">30</td>
+              </tr>
+              <tr>
+                <td class="tg-4kim">Niños Manga Larga</td>
+                <td class="tg-4kim">120</td>
+                <td class="tg-4kim">60</td>
+                <td class="tg-4kim">40</td>
+                <td class="tg-4kim">30</td>
+              </tr>
+              <tr>
+                  <td class="tg-4kim">Niños Manga Corta</td>
+                  <td class="tg-4kim">120</td>
+                  <td class="tg-4kim">60</td>
+                  <td class="tg-4kim">40</td>
+                  <td class="tg-4kim">30</td>
+                </tr>
+                <tr>
+                    <td class="tg-4kim">Niños Polo</td>
+                    <td class="tg-4kim">120</td>
+                    <td class="tg-4kim">60</td>
+                    <td class="tg-4kim">40</td>
+                    <td class="tg-4kim">30</td>
+                  </tr>
+                  <tr>
+                      <td class="tg-4kim">Blusas</td>
+                      <td class="tg-4kim">120</td>
+                      <td class="tg-4kim">60</td>
+                      <td class="tg-4kim">40</td>
+                      <td class="tg-4kim">30</td>
+                    </tr>
+            </table>
+      
+      </div>
+
+
+   
+      <div id="Pantalones" >
+          
+                    <table class="tg">
+                        <tr>
+                          <th class="tg-0pky">Tipo</th>
+                          <th class="tg-0pky">DryClean</th>
+                          <th class="tg-0pky">Lavado y Planchado</th>
+                          <th class="tg-0pky">Lavado</th>
+                          <th class="tg-0pky">Planchado</th>
+                        </tr>
+                        <tr>
+                          <td class="tg-4kim">Almohadas</td>
+                          <td class="tg-4kim">120</td>
+                          <td class="tg-4kim">60</td>
+                          <td class="tg-4kim">40</td>
+                          <td class="tg-4kim">30</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-4m7p">Cojines</td>
+                          <td class="tg-4m7p">100</td>
+                          <td class="tg-4m7p">50</td>
+                          <td class="tg-4m7p">80</td>
+                          <td class="tg-4m7p">30</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-4kim">Oblerol</td>
+                          <td class="tg-4kim">120</td>
+                          <td class="tg-4kim">60</td>
+                          <td class="tg-4kim">40</td>
+                          <td class="tg-4kim">30</td>
+                        </tr>
+                        <tr>
+                            <td class="tg-4kim">Cortinas</td>
+                            <td class="tg-4kim">120</td>
+                            <td class="tg-4kim">60</td>
+                            <td class="tg-4kim">40</td>
+                            <td class="tg-4kim">30</td>
+                          </tr>
+                          <tr>
+                              <td class="tg-4kim">Colchas</td>
+                              <td class="tg-4kim">120</td>
+                              <td class="tg-4kim">60</td>
+                              <td class="tg-4kim">40</td>
+                              <td class="tg-4kim">30</td>
+                            </tr>
+          
+                            <tr>
+                                <td class="tg-4kim">Alfombras</td>
+                                <td class="tg-4kim">120</td>
+                                <td class="tg-4kim">60</td>
+                                <td class="tg-4kim">40</td>
+                                <td class="tg-4kim">30</td>
+                              </tr>
+                      </table>
+                
+                </div>
+          
+
+                <div id="Trajes" >
+                   
+                              <table class="tg">
+                                  <tr>
+                                    <th class="tg-0pky">Tipo</th>
+                                    <th class="tg-0pky">DryClean</th>
+                                    <th class="tg-0pky">Lavado y Planchado</th>
+                                    <th class="tg-0pky">Lavado</th>
+                                    <th class="tg-0pky">Planchado</th>
+                                  </tr>
+                                  <tr>
+                                    <td class="tg-4kim">Almohadas</td>
+                                    <td class="tg-4kim">120</td>
+                                    <td class="tg-4kim">60</td>
+                                    <td class="tg-4kim">40</td>
+                                    <td class="tg-4kim">30</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="tg-4m7p">Cojines</td>
+                                    <td class="tg-4m7p">100</td>
+                                    <td class="tg-4m7p">50</td>
+                                    <td class="tg-4m7p">80</td>
+                                    <td class="tg-4m7p">30</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="tg-4kim">Oblerol</td>
+                                    <td class="tg-4kim">120</td>
+                                    <td class="tg-4kim">60</td>
+                                    <td class="tg-4kim">40</td>
+                                    <td class="tg-4kim">30</td>
+                                  </tr>
+                                  <tr>
+                                      <td class="tg-4kim">Cortinas</td>
+                                      <td class="tg-4kim">120</td>
+                                      <td class="tg-4kim">60</td>
+                                      <td class="tg-4kim">40</td>
+                                      <td class="tg-4kim">30</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-4kim">Colchas</td>
+                                        <td class="tg-4kim">120</td>
+                                        <td class="tg-4kim">60</td>
+                                        <td class="tg-4kim">40</td>
+                                        <td class="tg-4kim">30</td>
+                                      </tr>
+                    
+                                      <tr>
+                                          <td class="tg-4kim">Alfombras</td>
+                                          <td class="tg-4kim">120</td>
+                                          <td class="tg-4kim">60</td>
+                                          <td class="tg-4kim">40</td>
+                                          <td class="tg-4kim">30</td>
+                                        </tr>
+                                </table>
+                          
+                          </div>
+                    
+     
+
+      <div id="Otros" >
+
+          <table class="tg">
+              <tr>
+                <th class="tg-0pky">Tipo</th>
+                <th class="tg-0pky">DryClean</th>
+                <th class="tg-0pky">Lavado y Planchado</th>
+                <th class="tg-0pky">Lavado</th>
+                <th class="tg-0pky">Planchado</th>
+              </tr>
+              <tr>
+                <td class="tg-4kim">Almohadas</td>
+                <td class="tg-4kim">120</td>
+                <td class="tg-4kim">60</td>
+                <td class="tg-4kim">40</td>
+                <td class="tg-4kim">30</td>
+              </tr>
+              <tr>
+                <td class="tg-4m7p">Cojines</td>
+                <td class="tg-4m7p">100</td>
+                <td class="tg-4m7p">50</td>
+                <td class="tg-4m7p">80</td>
+                <td class="tg-4m7p">30</td>
+              </tr>
+              <tr>
+                <td class="tg-4kim">Oblerol</td>
+                <td class="tg-4kim">120</td>
+                <td class="tg-4kim">60</td>
+                <td class="tg-4kim">40</td>
+                <td class="tg-4kim">30</td>
+              </tr>
+              <tr>
+                  <td class="tg-4kim">Cortinas</td>
+                  <td class="tg-4kim">120</td>
+                  <td class="tg-4kim">60</td>
+                  <td class="tg-4kim">40</td>
+                  <td class="tg-4kim">30</td>
+                </tr>
+                <tr>
+                    <td class="tg-4kim">Colchas</td>
+                    <td class="tg-4kim">120</td>
+                    <td class="tg-4kim">60</td>
+                    <td class="tg-4kim">40</td>
+                    <td class="tg-4kim">30</td>
+                  </tr>
+
+                  <tr>
+                      <td class="tg-4kim">Alfombras</td>
+                      <td class="tg-4kim">120</td>
+                      <td class="tg-4kim">60</td>
+                      <td class="tg-4kim">40</td>
+                      <td class="tg-4kim">30</td>
+                    </tr>
+            </table>
+      
+      </div>
+
+
+  </div>
+
+
+</div>
+
+</section>
+
+
+<section id ="Contacto" >
+
+
+
+  
+    <h1>
+        Contacto
+    </h1>
+
+    <br>
+    <h2>
+      ¿Tiene alguna duda? Contactenos!
+    </h2>
+
+<br>
+    <div class ="row">
+
+      <div class="col">
+
+          <div>  
+              <img style='vertical-align:middle;width:100px;color:white' src="img/Phone.png">
+              
+              <div style='vertical-align:middle; display:inline;color:white'>
+                809-586-6125
+              </div>
+        
+              <img style='vertical-align:middle;width:100px;' src="img/Location.png">
+              
+              <div style='vertical-align:middle; display:inline;'>
+                
+               
+                  <a  target="_blank" rel="noopener noreferrer" href="https://goo.gl/maps/oZaJcNL6sS9qGH6HA">
+                    Av Manolo Tavarez Justo No. 2
+                  </a>
+                
+                
+              </div>
+        
+        
+        </div>
+        
+
+      </div>
+    </div>
+
+  
+
+  
+               
+
+</section>
+
+         
+</div> 
+                    
+                  
+                    
+
+                    
+        
+
+    
+
+    
+</body>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>
