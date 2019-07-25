@@ -1,5 +1,4 @@
 # LaundryApp
-Project to handle a laundry receits
-V.10
+Website build to display company information.
 
-Its going to be the same software they already use but on the web, using python for the back end.
+Using Bootstrap4 CSS3 HTML5 Javascript and Jquery
