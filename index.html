@@ -6,10 +6,7 @@
     <title>Lavanderia Puerto Plata</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">  
     <link rel="stylesheet" href="./style.css">
-    <script src="https://kit.fontawesome.com/09209e6298.js"></script>
 
-    <!--JQuery CDN-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <!--JS to go to sections-->
 <script>
@@ -40,8 +37,21 @@ mainNavLinks.forEach(link => {
   </script>
 <!--JS to go to sections-->
 
+<script>
 
 
+$( document ).ready(function() {
+  Email.send({
+ Host : "smtp.yourisp.com",
+ Username : "ing.eduardoq@gmail.com",
+ Password : "quezada28",
+ To : 'them@website.com',
+ From : "you@isp.com",
+ Subject : "This is the subject",
+ Body : "And this is the body"}).then( message => alert(message));});
+
+
+</script>
 <script>
 
 
@@ -51,6 +61,8 @@ function ShowTableCamisas() {
   document.getElementById("Pantalones").style.display = "none";
   document.getElementById("Trajes").style.display = "none";
   document.getElementById("Otros").style.display = "none";
+  document.getElementById("Accesorios").style.display = "none";
+  document.getElementById("Hogar").style.display = "none";
 }
 
 function ShowTablePantalones() {
@@ -58,6 +70,8 @@ function ShowTablePantalones() {
   document.getElementById("Pantalones").style.display = "block";
   document.getElementById("Trajes").style.display = "none";
   document.getElementById("Otros").style.display = "none";
+  document.getElementById("Accesorios").style.display = "none";
+  document.getElementById("Hogar").style.display = "none";
 }
 
 function ShowTableTrajes() {
@@ -65,19 +79,48 @@ function ShowTableTrajes() {
   document.getElementById("Pantalones").style.display = "none";
   document.getElementById("Trajes").style.display = "block";
   document.getElementById("Otros").style.display = "none";
+  document.getElementById("Accesorios").style.display = "none";
+  document.getElementById("Hogar").style.display = "none";
 }
 function ShowTableOtros() {
   document.getElementById("Camisas").style.display = "none";
   document.getElementById("Pantalones").style.display = "none";
   document.getElementById("Trajes").style.display = "none";
   document.getElementById("Otros").style.display = "block";
+  document.getElementById("Accesorios").style.display = "none";
+  document.getElementById("Hogar").style.display = "none";
+}
+
+function ShowTableAccesorios() {
+  document.getElementById("Camisas").style.display = "none";
+  document.getElementById("Pantalones").style.display = "none";
+  document.getElementById("Trajes").style.display = "none";
+  document.getElementById("Otros").style.display = "none";
+  document.getElementById("Accesorios").style.display = "block";
+  document.getElementById("Hogar").style.display = "none";
+}
+function ShowTableHogar() {
+  document.getElementById("Camisas").style.display = "none";
+  document.getElementById("Pantalones").style.display = "none";
+  document.getElementById("Trajes").style.display = "none";
+  document.getElementById("Otros").style.display = "none";
+  document.getElementById("Accesorios").style.display = "none";
+  document.getElementById("Hogar").style.display = "block";
 }
 
 
 
 </script> 
 
+<style type="text/css">
 
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#9ABAD9;width:100%; box-shadow: 5px 5px 5px 3px  grey; }
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#9ABAD9;color:#444;background-color:#EBF5FF;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#9ABAD9;color:#fff;background-color:#409cff;}
+.tg .tg-baqh{text-align:center;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+
+  </style>
 
 </head>
 
@@ -85,25 +128,15 @@ function ShowTableOtros() {
 
 <body>
 
-    <style type="text/css">
 
- 
-      .tg  {border-collapse:collapse;border-spacing:1;border-color:white;table-layout:fixed;width:550px;margin-right:50px;}
-      .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#9ABAD9;color:#444;background-color:#EBF5FF;}
-      .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-top-width:1px;border-bottom-width:1px;border-color:#9ABAD9;color:#fff;background-color:#409cff;}
-      .tg .tg-4kim{background-color:#9aff99;border-color:inherit;text-align:center;vertical-align:top}
-      .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-      .tg .tg-4m7p{background-color:#9aff99;border-color:inherit;text-align:center;vertical-align:top}
-      </style>
    
   
 <!-- Image and text -->
-<nav class="navbar  py-0 navbar-expand-sm py-md-0 shadow p-0.1 mb-0.1">
+<nav class="navbar sticky-top py-0 navbar-expand-sm py-md-0 shadow p-0.1 mb-0.1">
      
   
   <a class="navbar-brand" href="#">
-    <img src="./img/Logo.png" alt="Logo" style="width:75%" >
-    
+    <img src="./img/Logo.png" alt="Logo" style="width:75%" >   
   </a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -140,16 +173,16 @@ function ShowTableOtros() {
 </nav>
 
 
-     <div class="container-fluid">
+     <div class="container-fluid p-0">
 
 
      
-            <section id="Servicios" class="shadow p-7 mb-0 bg-blue rounded"> 
+            <section id="Servicios" class="shadow p-7 mb-0 bg-blue "> 
                
 
-              <h3>
+              <h1 style="color:black; padding:10px">
                 Servicios
-              </h3>
+              </h1>
             
               
             <div class="row">
@@ -160,12 +193,15 @@ function ShowTableOtros() {
                     
                       
                             
-                            <div class="card" style="width:300px">
-                                    <img class="card-img-top" src="./img/DryClean.jpg" alt="Card image">
-                                    <div class="card-body">
+                            <div class="card" data-toggle="collapse" data-target="#DryClean"style="width:300px">
+                                    <img class="card-img-top " src="./img/DryClean.png" alt="Card image">
+                                    <div class="card-body"data-toggle="collapse" data-target="#DryClean">
                                       <h4 class="card-title">Lavado en Seco</h4>
-                                      <p class="card-text">Lavado de prendas sin mojarla</p>
-
+                                      <p class="card-text">Lavado Especial</p>
+                                   
+                                      <div id="DryClean" class="collapse">
+                                          Se le aplica un producto especial a las prendas que permiten el planchado sin necesidad de lavado tradicional.
+                                          </div>
                                     </div>
                                   </div>
                  </div>
@@ -173,12 +209,15 @@ function ShowTableOtros() {
                      <div class ="col">
 
 
-                            <div class="card" style="width:300px">
-                                    <img class="card-img-top" src="./img/Lavado.jpg" alt="Card image" >
-                                    <div class="card-body">
+                            <div class="card" data-toggle="collapse"  data-target="#Lavado" style="width:300px">
+                                    <img class="card-img-top" src="./img/Lavado.png" alt="Card image" >
+                                    <div class="card-body"data-toggle="collapse" data-target="#Lavado">
                                       <h4 class="card-title">Lavado</h4>
-                                      <p class="card-text">Lavado de prendas segun sus necesidades</p>
-                                   
+                                      <p class="card-text">Servicio General</p>
+                                    
+                                      <div id="Lavado" class="collapse">
+                                          Lavamos prendas a mano o a maquina segun sus necesidades!
+                                          </div>
                                     </div>
                                   </div>
                             
@@ -186,12 +225,15 @@ function ShowTableOtros() {
         
                                     <div class ="col">
                             
-                                        <div class="card" style="width:300px">
-                                    <img class="card-img-top" src="./img/Planchado.jpg" alt="Card image" >
-                                    <div class="card-body">
+                                        <div class="card" data-toggle="collapse" data-target="#Planchado" style="width:300px">
+                                    <img class="card-img-top" src="./img/Planchado.png" alt="Card image" >
+                                    <div class="card-body"data-toggle="collapse" data-target="#Planchado">
                                       <h4 class="card-title">Planchado</h4>
-                                      <p class="card-text">Plchando  de nivel profesional</p>
+                                      <p class="card-text">Planchado General</p>
                                      
+                                      <div id="Planchado" class="collapse">
+                                          Planchamos todos tidos de prendas desde vestidos de novia hasta manteles, consulte nuestros precios!
+                                          </div>
                                     </div>
                                   </div>
                             
@@ -201,10 +243,15 @@ function ShowTableOtros() {
                                         <div class ="col">
                             
                                                 <div class="card" style="width:300px">
-                                            <img class="card-img-top" src="./img/Express.jpg" alt="Card image">
-                                            <div class="card-body">
+                                            <img class="card-img-top" data-toggle="collapse"data-target="#Express" src="./img/Express.png" alt="Card image">
+                                            <div class="card-body"data-toggle="collapse"data-target="#Express">
                                               <h4 class="card-title">Servicio Express</h4>
-                                              <p class="card-text">Sus prendas estan listas el mismo dia de facturación</p>
+                                              <p class="card-text">Servicio Rápido</p>
+                                              
+                                              <div id="Express" class="collapse">
+                                                  <p class="card-text">Se reciben prendas hasta las 12:00 PM y se debe de pagar la factura en su totalidad.</p>
+                                                  <p class="card-text">Sus prendas estaran listas para el mismo dia a partir de las 5:00 PM.</p>
+                                                  </div>
                                              
                                             </div>
                                           </div>
@@ -220,287 +267,613 @@ function ShowTableOtros() {
                      
                                      
                      
-<section id="Precios" class="shadow-lg p-7 mb-0 bg-white rounded">
+<section id="Precios">
 
-  <h3>
-    Precios
-</h3>  
- 
-                       
-<div class="row">
 
   
+    <h1 style="text-align:center;color:black">
+        Precios
+    </h1>
 
-        <div class ="col">
-               
-         <div>
+<div class="row ">
 
-            <button button type="button" class="btn btn-primary" onclick="ShowTableCamisas()" >
-            <img src="./img/Camisas.png" class="Icon">Camisas
-            </button>
 
-        
-         </div>
+<div class="col-sm-3 p-0">
 
-        
-         <div>
-          <button button type="button" class="btn btn-primary" onclick="ShowTablePantalones()" >
-            <img src="./img/Pantalon.png" class="Icon" >Pantalones
-          </button>
-         </div>
            
-          
-<div>
-  <button button type="button" class="btn btn-primary" onclick="ShowTableTrajes()">
-    <img src="./img/Traje.png" class="Icon" >Trajes
-  </button>
 
-</div>
+  <div id="Boton">
 
+          <button button type="button" class="btn btn-primary" onclick="ShowTableCamisas()" >
+                  <img src="./img/Camisas.png"  class="Icon">Camisas
+                  </button>
 
-<div>
-    <button button type="button" class="btn btn-primary"  onclick="ShowTableOtros()" >
-      <img src="./img/Cama.png" class="Icon" >Otros
-    </button>
-  
+                  <br>
   </div>
-          
-</div>
+ 
+  <div id="Boton">
+
+          <button button type="button" class="btn btn-primary"   onclick="ShowTablePantalones()" >
+                  <img src="./img/Pantalon.png"class="Icon">Pantalones
+                  </button>
+  </div> 
+  <div id="Boton">
+
+          <button button type="button" class="btn btn-primary"  onclick="ShowTableAccesorios()" >
+                  <img src="./img/Intima.png"class="Icon">Accesorios
+                  </button>
+  </div> 
+  <div id="Boton">
+
+          <button button type="button" class="btn btn-primary"   onclick="ShowTableTrajes()" >
+                  <img src="./img/Traje.png"  class="Icon">Trajes
+                  </button>
+  </div> 
+
+  <div id="Boton">
+
+      <button button type="button" class="btn btn-primary"   onclick="ShowTableHogar()" >
+              <img src="./img/Hogar.png"  class="Icon">Hogar
+              </button>
+</div> 
+  
+  <div id="Boton">
+
+          <button button type="button" class="btn btn-primary"   onclick="ShowTableOtros()" >
+                  <img src="./img/Cama.png" class="Icon">Otros
+                  </button>
+  </div> 
 
 </div>
 
-  <div class="row">
+  
 
-<div class="col">
+<div class="col-sm-9 text-center my-auto">
+
+
+
       <div id="Camisas" >
         
-          <table class="tg fixed">
-              <tr>
-                <th class="tg-0pky">Tipo</th>
-                <th class="tg-0pky">DryClean</th>
-                <th class="tg-0pky">Lavado y Planchado</th>
-                <th class="tg-0pky">Lavado</th>
-                <th class="tg-0pky">Planchado</th>
-              </tr>
-              <tr>
-                <td class="tg-4kim">Manga Larga</td>
-                <td class="tg-4kim">120</td>
-                <td class="tg-4kim">60</td>
-                <td class="tg-4kim">40</td>
-                <td class="tg-4kim">30</td>
-              </tr>
-              <tr>
-                <td class="tg-4m7p">Manga Corta</td>
-                <td class="tg-4m7p">120</td>
-                <td class="tg-4m7p">60</td>
-                <td class="tg-4m7p">40</td>
-                <td class="tg-4m7p">30</td>
-              </tr>
-              <tr>
-                <td class="tg-4kim">Niños Manga Larga</td>
-                <td class="tg-4kim">120</td>
-                <td class="tg-4kim">60</td>
-                <td class="tg-4kim">40</td>
-                <td class="tg-4kim">30</td>
-              </tr>
-              <tr>
-                  <td class="tg-4kim">Niños Manga Corta</td>
-                  <td class="tg-4kim">120</td>
-                  <td class="tg-4kim">60</td>
-                  <td class="tg-4kim">40</td>
-                  <td class="tg-4kim">30</td>
-                </tr>
-                <tr>
-                    <td class="tg-4kim">Niños Polo</td>
-                    <td class="tg-4kim">120</td>
-                    <td class="tg-4kim">60</td>
-                    <td class="tg-4kim">40</td>
-                    <td class="tg-4kim">30</td>
-                  </tr>
-                  <tr>
-                      <td class="tg-4kim">Blusas</td>
-                      <td class="tg-4kim">120</td>
-                      <td class="tg-4kim">60</td>
-                      <td class="tg-4kim">40</td>
-                      <td class="tg-4kim">30</td>
-                    </tr>
-            </table>
-      
+        <table class="tg">
+          <tr>
+            <th class="tg-6ycq">Descripción</th>
+            <th class="tg-6ycq">DryClean</th>
+            <th class="tg-6ycq">Lavado y Planchado</th>
+            <th class="tg-6ycq">Planchado</th>
+          </tr>
+          <tr>
+            <td class="tg-zzvt">Camisa</td>
+            <td class="tg-d78e">RD$ 65.00</td>
+            <td class="tg-d78e">RD$ 60.00</td>
+            <td class="tg-d78e">RD$ 55.00</td>
+          </tr>
+          <tr>
+            <td class="tg-zzvt">Camisa Manga Larga</td>
+            <td class="tg-d78e">RD$ 70.00</td>
+            <td class="tg-d78e">RD$ 65.00</td>
+            <td class="tg-d78e">RD$ 60.00</td>
+          </tr>
+          <tr>
+            <td class="tg-zzvt">Abrigo</td>
+            <td class="tg-d78e">RD$ 200.00</td>
+            <td class="tg-d78e">RD$ 150.00</td>
+            <td class="tg-d78e">RD$ 0.00</td>
+          </tr>
+          <tr>
+            <td class="tg-zzvt">Blusa</td>
+            <td class="tg-d78e">RD$ 65.00</td>
+            <td class="tg-d78e">RD$ 60.00</td>
+            <td class="tg-d78e">RD$ 50.00</td>
+          </tr>
+          <tr>
+            <td class="tg-zzvt">Camisa de Niño</td>
+            <td class="tg-d78e">RD$ 35.00</td>
+            <td class="tg-d78e">RD$ 30.00</td>
+            <td class="tg-d78e">RD$ 25.00</td>
+          </tr>
+          <tr>
+            <td class="tg-zzvt">Camiseta</td>
+            <td class="tg-d78e">-</td>
+            <td class="tg-d78e">RD$ 30.00</td>
+            <td class="tg-d78e">RD$ 20.00</td>
+          </tr>
+          <tr>
+            <td class="tg-zzvt">Polo-Shirt</td>
+            <td class="tg-d78e">RD$ 60.00</td>
+            <td class="tg-d78e">RD$ 50.00</td>
+            <td class="tg-d78e">RD$ 45.00</td>
+          </tr>
+          <tr>
+            <td class="tg-zzvt">Abrigos Grandes</td>
+            <td class="tg-d78e">-</td>
+            <td class="tg-d78e">RD$ 500.00</td>
+            <td class="tg-d78e">-</td>
+          </tr>
+          <tr>
+            <td class="tg-zzvt">Camisa Manga Corta Lino</td>
+            <td class="tg-d78e">-</td>
+            <td class="tg-d78e">RD$ 70.00</td>
+            <td class="tg-d78e">RD$ 60.00</td>
+          </tr>
+          <tr>
+            <td class="tg-zzvt">Camisa Manga Larga Lino</td>
+            <td class="tg-d78e">-</td>
+            <td class="tg-d78e">RD$ 80.00</td>
+            <td class="tg-d78e">RD$ 70.00</td>
+          </tr>
+          <tr>
+            <td class="tg-zzvt">Bata de Lino</td>
+            <td class="tg-d78e">-</td>
+            <td class="tg-d78e">RD$ 200.00</td>
+            <td class="tg-d78e">RD$ 175.00</td>
+          </tr>
+          <tr>
+            <td class="tg-zzvt">Bata de Medico</td>
+            <td class="tg-d78e">RD$ 175.00</td>
+            <td class="tg-d78e">RD$ 125.00</td>
+            <td class="tg-d78e">RD$ 100.00</td>
+          </tr>
+      </table>
       </div>
 
 
    
       <div id="Pantalones" >
           
-                    <table class="tg">
-                        <tr>
-                          <th class="tg-0pky">Tipo</th>
-                          <th class="tg-0pky">DryClean</th>
-                          <th class="tg-0pky">Lavado y Planchado</th>
-                          <th class="tg-0pky">Lavado</th>
-                          <th class="tg-0pky">Planchado</th>
+        <table class="tg">
+            <tr>
+                <th class="tg-baqh">Descripción</th>
+                <th class="tg-baqh">DryClean</th>
+                <th class="tg-baqh">Lavado y Planchado</th>
+                <th class="tg-baqh">Planchado</th>
+              </tr>
+              <tr>
+                <td class="tg-baqh">Pantalon</td>
+                <td class="tg-baqh">RD$ 70.00</td>
+                <td class="tg-baqh">RD$ 65.00</td>
+                <td class="tg-baqh">RD$ 60.00</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">Pantalon Corto</td>
+                <td class="tg-baqh">RD$ 50.00</td>
+                <td class="tg-baqh">RD$ 50.00</td>
+                <td class="tg-baqh">RD$ 45.00</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">Falda</td>
+                <td class="tg-baqh">RD$ 50.00</td>
+                <td class="tg-baqh">RD$ 45.00</td>
+                <td class="tg-baqh">RD$ 40.00</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">Pantalon de Niño</td>
+                <td class="tg-baqh">RD$ 40.00</td>
+                <td class="tg-baqh">RD$ 35.00</td>
+                <td class="tg-baqh">RD$ 30.00</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">Pantalon Corto Lino</td>
+                <td class="tg-baqh">-</td>
+                <td class="tg-baqh">RD$ 55.00</td>
+                <td class="tg-baqh">RD$ 50.00</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">Pantalon Largo Lino</td>
+                <td class="tg-baqh">-</td>
+                <td class="tg-baqh">RD$ 80.00</td>
+                <td class="tg-baqh">RD$ 70.00</td>
+              </tr>
+              <tr>
+                  <td class="tg-baqh">-</td>
+                  <td class="tg-baqh">-</td>
+                  <td class="tg-baqh">-</td>
+                  <td class="tg-baqh">-</td>
+                </tr>
+                <tr>
+                    <td class="tg-baqh">-</td>
+                    <td class="tg-baqh">-</td>
+                    <td class="tg-baqh">-</td>
+                    <td class="tg-baqh">-</td>
+                  </tr>
+                  <tr>
+                      <td class="tg-baqh">-</td>
+                      <td class="tg-baqh">-</td>
+                      <td class="tg-baqh">-</td>
+                      <td class="tg-baqh">-</td>
+                    </tr>
+                    <tr>
+                        <td class="tg-baqh">-</td>
+                        <td class="tg-baqh">-</td>
+                        <td class="tg-baqh">-</td>
+                        <td class="tg-baqh">-</td>
+                      </tr>
+                      <tr>
+                          <td class="tg-baqh">-</td>
+                          <td class="tg-baqh">-</td>
+                          <td class="tg-baqh">-</td>
+                          <td class="tg-baqh">-</td>
                         </tr>
                         <tr>
-                          <td class="tg-4kim">Almohadas</td>
-                          <td class="tg-4kim">120</td>
-                          <td class="tg-4kim">60</td>
-                          <td class="tg-4kim">40</td>
-                          <td class="tg-4kim">30</td>
-                        </tr>
-                        <tr>
-                          <td class="tg-4m7p">Cojines</td>
-                          <td class="tg-4m7p">100</td>
-                          <td class="tg-4m7p">50</td>
-                          <td class="tg-4m7p">80</td>
-                          <td class="tg-4m7p">30</td>
-                        </tr>
-                        <tr>
-                          <td class="tg-4kim">Oblerol</td>
-                          <td class="tg-4kim">120</td>
-                          <td class="tg-4kim">60</td>
-                          <td class="tg-4kim">40</td>
-                          <td class="tg-4kim">30</td>
-                        </tr>
-                        <tr>
-                            <td class="tg-4kim">Cortinas</td>
-                            <td class="tg-4kim">120</td>
-                            <td class="tg-4kim">60</td>
-                            <td class="tg-4kim">40</td>
-                            <td class="tg-4kim">30</td>
+                            <td class="tg-baqh">-</td>
+                            <td class="tg-baqh">-</td>
+                            <td class="tg-baqh">-</td>
+                            <td class="tg-baqh">-</td>
                           </tr>
-                          <tr>
-                              <td class="tg-4kim">Colchas</td>
-                              <td class="tg-4kim">120</td>
-                              <td class="tg-4kim">60</td>
-                              <td class="tg-4kim">40</td>
-                              <td class="tg-4kim">30</td>
-                            </tr>
-          
-                            <tr>
-                                <td class="tg-4kim">Alfombras</td>
-                                <td class="tg-4kim">120</td>
-                                <td class="tg-4kim">60</td>
-                                <td class="tg-4kim">40</td>
-                                <td class="tg-4kim">30</td>
-                              </tr>
-                      </table>
+                   
+        </table>
                 
-                </div>
+        </div>
           
 
-                <div id="Trajes" >
-                   
-                              <table class="tg">
-                                  <tr>
-                                    <th class="tg-0pky">Tipo</th>
-                                    <th class="tg-0pky">DryClean</th>
-                                    <th class="tg-0pky">Lavado y Planchado</th>
-                                    <th class="tg-0pky">Lavado</th>
-                                    <th class="tg-0pky">Planchado</th>
-                                  </tr>
-                                  <tr>
-                                    <td class="tg-4kim">Almohadas</td>
-                                    <td class="tg-4kim">120</td>
-                                    <td class="tg-4kim">60</td>
-                                    <td class="tg-4kim">40</td>
-                                    <td class="tg-4kim">30</td>
-                                  </tr>
-                                  <tr>
-                                    <td class="tg-4m7p">Cojines</td>
-                                    <td class="tg-4m7p">100</td>
-                                    <td class="tg-4m7p">50</td>
-                                    <td class="tg-4m7p">80</td>
-                                    <td class="tg-4m7p">30</td>
-                                  </tr>
-                                  <tr>
-                                    <td class="tg-4kim">Oblerol</td>
-                                    <td class="tg-4kim">120</td>
-                                    <td class="tg-4kim">60</td>
-                                    <td class="tg-4kim">40</td>
-                                    <td class="tg-4kim">30</td>
-                                  </tr>
-                                  <tr>
-                                      <td class="tg-4kim">Cortinas</td>
-                                      <td class="tg-4kim">120</td>
-                                      <td class="tg-4kim">60</td>
-                                      <td class="tg-4kim">40</td>
-                                      <td class="tg-4kim">30</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="tg-4kim">Colchas</td>
-                                        <td class="tg-4kim">120</td>
-                                        <td class="tg-4kim">60</td>
-                                        <td class="tg-4kim">40</td>
-                                        <td class="tg-4kim">30</td>
-                                      </tr>
-                    
-                                      <tr>
-                                          <td class="tg-4kim">Alfombras</td>
-                                          <td class="tg-4kim">120</td>
-                                          <td class="tg-4kim">60</td>
-                                          <td class="tg-4kim">40</td>
-                                          <td class="tg-4kim">30</td>
-                                        </tr>
-                                </table>
-                          
-                          </div>
+       <div id="Trajes" >
+                  <table class="tg">
+                      <tr>
+                          <th class="tg-baqh">Chaqueta</th>
+                          <th class="tg-baqh">RD$ 150.00</th>
+                          <th class="tg-baqh">-</th>
+                          <th class="tg-baqh">RD$ 100.00</th>
+                        </tr>
+                        <tr>
+                          <td class="tg-baqh">Chaqueta de Niño</td>
+                          <td class="tg-baqh">RD$ 85.00</td>
+                          <td class="tg-baqh">RD$ 75.00</td>
+                          <td class="tg-baqh">-</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-baqh">Traje de Niño</td>
+                          <td class="tg-baqh">RD$ 130.00</td>
+                          <td class="tg-baqh">-</td>
+                          <td class="tg-baqh">RD$ 100.00</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-baqh">Corbata</td>
+                          <td class="tg-baqh">-</td>
+                          <td class="tg-baqh">RD$ 25.00</td>
+                          <td class="tg-baqh">-</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-baqh">Vestido</td>
+                          <td class="tg-baqh">RD$ 150.00</td>
+                          <td class="tg-baqh">-</td>
+                          <td class="tg-baqh">RD$ 120.00</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-baqh">Vestido de Lino</td>
+                          <td class="tg-baqh">RD$ 400.00</td>
+                          <td class="tg-baqh">RD$ 300.00</td>
+                          <td class="tg-baqh">RD$ 250.00</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-baqh">Vestido de Novia</td>
+                          <td class="tg-baqh">-</td>
+                          <td class="tg-baqh">RD$ 1,000.00</td>
+                          <td class="tg-baqh">RD$ 500.00</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-baqh">Vestido de Novia Grande</td>
+                          <td class="tg-baqh">-</td>
+                          <td class="tg-baqh">RD$ 800.00</td>
+                          <td class="tg-baqh">-</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-baqh">Vestido Corto</td>
+                          <td class="tg-baqh">RD$ 200.00</td>
+                          <td class="tg-baqh">RD$ 175.00</td>
+                          <td class="tg-baqh">RD$ 150.00</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-baqh">Vestido Largo</td>
+                          <td class="tg-baqh">RD$ 250.00</td>
+                          <td class="tg-baqh">RD$ 225.00</td>
+                          <td class="tg-baqh">RD$ 200.00</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-baqh">Vestido de Niña</td>
+                          <td class="tg-baqh">RD$ 195.00</td>
+                          <td class="tg-baqh">RD$ 165.00</td>
+                          <td class="tg-baqh">RD$ 125.00</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-baqh">Saco</td>
+                          <td class="tg-baqh">RD$ 200.00</td>
+                          <td class="tg-baqh">-</td>
+                          <td class="tg-baqh">RD$ 150.00</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-baqh">Toga de Graduación</td>
+                          <td class="tg-baqh">-</td>
+                          <td class="tg-baqh">RD$ 150.00</td>
+                          <td class="tg-baqh">RD$ 100.00</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-baqh">Traje</td>
+                          <td class="tg-baqh">RD$ 250.00</td>
+                          <td class="tg-baqh">-</td>
+                          <td class="tg-baqh">RD$ 200.00</td>
+                        </tr>
+
+                  </table>
+        </div>
                     
      
 
+      <div id="Accesorios">
+                              <table class="tg">
+                                  <tr>
+                                      <th class="tg-baqh">Descripción</th>
+                                      <th class="tg-baqh">Lavado y Planchado</th>
+                                      <th class="tg-baqh">Planchado</th>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Media</td>
+                                      <td class="tg-baqh">RD$ 25.00</td>
+                                      <td class="tg-baqh">-</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Gorra</td>
+                                      <td class="tg-baqh">RD$ 50.00</td>
+                                      <td class="tg-baqh">-</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Overall</td>
+                                      <td class="tg-baqh">RD$ 150.00</td>
+                                      <td class="tg-baqh">-</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Corbata</td>
+                                      <td class="tg-baqh">-</td>
+                                      <td class="tg-baqh">RD$ 25.00</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Calzoncillo</td>
+                                      <td class="tg-baqh">RD$ 25.00</td>
+                                      <td class="tg-baqh">-</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Pantie</td>
+                                      <td class="tg-baqh">RD$ 25.00</td>
+                                      <td class="tg-baqh">-</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tg-baqh">-</td>
+                                        <td class="tg-baqh">-</td>
+                                        <td class="tg-baqh">-</td>
+                                     
+                                      </tr>
+                                      <tr>
+                                          <td class="tg-baqh">-</td>
+                                          <td class="tg-baqh">-</td>
+                                          <td class="tg-baqh">-</td>
+                                         
+                                        </tr>
+                                        <tr>
+                                            <td class="tg-baqh">-</td>
+                                            <td class="tg-baqh">-</td>
+                                            <td class="tg-baqh">-</td>
+                                           
+                                          </tr>
+                                          <tr>
+                                              <td class="tg-baqh">-</td>
+                                              <td class="tg-baqh">-</td>
+                                              <td class="tg-baqh">-</td>
+                                              
+                                            </tr>
+                                            <tr>
+                                                <td class="tg-baqh">-</td>
+                                                <td class="tg-baqh">-</td>
+                                                <td class="tg-baqh">-</td>
+                                            
+                                              </tr>
+                                              <tr>
+                                                  <td class="tg-baqh">-</td>
+                                                  <td class="tg-baqh">-</td>
+                                                  <td class="tg-baqh">-</td>
+                                                
+                                                </tr>
+                        </table>
+                          </div>
+
+
+
+                          <div id="Hogar">
+                              <table class="tg">
+                                  <tr>
+                                      <th class="tg-baqh">Descripción</th>
+                                      <th class="tg-baqh">Lavado y Planchado</th>
+                                      <th class="tg-baqh">Planchado</th>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Alfombra Extra Grande</td>
+                                      <td class="tg-baqh">RD$ 800.00</td>
+                                      <td class="tg-baqh">-</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Alfombra Medium</td>
+                                      <td class="tg-baqh">RD$ 400.00</td>
+                                      <td class="tg-baqh">-</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Alfombra Grande</td>
+                                      <td class="tg-baqh">RD$ 600.00</td>
+                                      <td class="tg-baqh">-</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Alfombra Pequeña</td>
+                                      <td class="tg-baqh">RD$ 200.00</td>
+                                      <td class="tg-baqh">-</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Bambalina</td>
+                                      <td class="tg-baqh">RD$ 300.00</td>
+                                      <td class="tg-baqh">RD$ 250.00</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Colcha</td>
+                                      <td class="tg-baqh">RD$ 400.00</td>
+                                      <td class="tg-baqh">-</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Cortina Extra Grande</td>
+                                      <td class="tg-baqh">RD$ 500.00</td>
+                                      <td class="tg-baqh">RD$ 350.00</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Cortina Grande</td>
+                                      <td class="tg-baqh">RD$ 250.00</td>
+                                      <td class="tg-baqh">RD$ 175.00</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Cortina Mediana</td>
+                                      <td class="tg-baqh">RD$ 175.00</td>
+                                      <td class="tg-baqh">RD$ 150.00</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Cortina Pequeña</td>
+                                      <td class="tg-baqh">RD$ 40.00</td>
+                                      <td class="tg-baqh">RD$ 100.00</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Frasada</td>
+                                      <td class="tg-baqh">RD$ 200.00</td>
+                                      <td class="tg-baqh">-</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Mantel de Lino</td>
+                                      <td class="tg-baqh">RD$ 250.00</td>
+                                      <td class="tg-baqh">RD$ 200.00</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Mantel Grande</td>
+                                      <td class="tg-baqh">RD$ 150.00</td>
+                                      <td class="tg-baqh">-</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Mantel Mediano</td>
+                                      <td class="tg-baqh">RD$ 100.00</td>
+                                      <td class="tg-baqh">-</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Sabana</td>
+                                      <td class="tg-baqh">RD$ 50.00</td>
+                                      <td class="tg-baqh">RD$ 45.00</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Alfombra Pequeña</td>
+                                      <td class="tg-baqh">RD$ 50.00</td>
+                                      <td class="tg-baqh">-</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Almohada</td>
+                                      <td class="tg-baqh">RD$ 150.00</td>
+                                      <td class="tg-baqh">-</td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tg-baqh">Cojin</td>
+                                      <td class="tg-baqh">RD$ 50.00</td>
+                                      <td class="tg-baqh">-</td>
+                                    </tr>
+                            </table>
+                          </div>
+
+
+                    
+
       <div id="Otros" >
 
-          <table class="tg">
-              <tr>
-                <th class="tg-0pky">Tipo</th>
-                <th class="tg-0pky">DryClean</th>
-                <th class="tg-0pky">Lavado y Planchado</th>
-                <th class="tg-0pky">Lavado</th>
-                <th class="tg-0pky">Planchado</th>
+        <table class="tg">
+            <tr>
+                <th class="tg-baqh">Descripción</th>
+                <th class="tg-baqh">Lavado y Planchado</th>
+                <th class="tg-baqh">Planchado</th>
               </tr>
               <tr>
-                <td class="tg-4kim">Almohadas</td>
-                <td class="tg-4kim">120</td>
-                <td class="tg-4kim">60</td>
-                <td class="tg-4kim">40</td>
-                <td class="tg-4kim">30</td>
+                <td class="tg-baqh">Banderas Servicio Gnal</td>
+                <td class="tg-baqh">RD$ 200.00</td>
+                <td class="tg-baqh">-</td>
               </tr>
               <tr>
-                <td class="tg-4m7p">Cojines</td>
-                <td class="tg-4m7p">100</td>
-                <td class="tg-4m7p">50</td>
-                <td class="tg-4m7p">80</td>
-                <td class="tg-4m7p">30</td>
+                <td class="tg-baqh">Desmanchado General</td>
+                <td class="tg-baqh">RD$ 100.00</td>
+                <td class="tg-baqh">-</td>
               </tr>
               <tr>
-                <td class="tg-4kim">Oblerol</td>
-                <td class="tg-4kim">120</td>
-                <td class="tg-4kim">60</td>
-                <td class="tg-4kim">40</td>
-                <td class="tg-4kim">30</td>
+                <td class="tg-baqh">Forro Extra Grande</td>
+                <td class="tg-baqh">RD$ 150.00</td>
+                <td class="tg-baqh">-</td>
               </tr>
               <tr>
-                  <td class="tg-4kim">Cortinas</td>
-                  <td class="tg-4kim">120</td>
-                  <td class="tg-4kim">60</td>
-                  <td class="tg-4kim">40</td>
-                  <td class="tg-4kim">30</td>
-                </tr>
-                <tr>
-                    <td class="tg-4kim">Colchas</td>
-                    <td class="tg-4kim">120</td>
-                    <td class="tg-4kim">60</td>
-                    <td class="tg-4kim">40</td>
-                    <td class="tg-4kim">30</td>
-                  </tr>
-
-                  <tr>
-                      <td class="tg-4kim">Alfombras</td>
-                      <td class="tg-4kim">120</td>
-                      <td class="tg-4kim">60</td>
-                      <td class="tg-4kim">40</td>
-                      <td class="tg-4kim">30</td>
-                    </tr>
-            </table>
+                <td class="tg-baqh">Forro Grande</td>
+                <td class="tg-baqh">RD$ 100.00</td>
+                <td class="tg-baqh">-</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">Forro Medium</td>
+                <td class="tg-baqh">RD$ 60.00</td>
+                <td class="tg-baqh">-</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">Forro</td>
+                <td class="tg-baqh">RD$ 50.00</td>
+                <td class="tg-baqh">-</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">Funda</td>
+                <td class="tg-baqh">RD$ 35.00</td>
+                <td class="tg-baqh">RD$ 25.00</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">Pañuelo</td>
+                <td class="tg-baqh">RD$ 25.00</td>
+                <td class="tg-baqh">-</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">Servilleta</td>
+                <td class="tg-baqh">RD$ 10.00</td>
+                <td class="tg-baqh">-</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">Tirante</td>
+                <td class="tg-baqh">RD$ 75.00</td>
+                <td class="tg-baqh">-</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">Toalla</td>
+                <td class="tg-baqh">RD$ 60.00</td>
+                <td class="tg-baqh">-</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">Piezas de Bebe</td>
+                <td class="tg-baqh">RD$ 25.00</td>
+                <td class="tg-baqh">-</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">Bultos</td>
+                <td class="tg-baqh">RD$ 100.00</td>
+                <td class="tg-baqh">-</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">Carpa</td>
+                <td class="tg-baqh">RD$ 500.00</td>
+                <td class="tg-baqh">-</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">Mochilas</td>
+                <td class="tg-baqh">RD$ 100.00</td>
+                <td class="tg-baqh">-</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">Bufanda</td>
+                <td class="tg-baqh">RD$ 50.00</td>
+                <td class="tg-baqh">-</td>
+              </tr>
+              <tr>
+                <td class="tg-baqh">Cabezales de Vehiculos</td>
+                <td class="tg-baqh">RD$ 10.00</td>
+                <td class="tg-baqh">-</td>
+                <td class="tg-baqh"></td>
+              </tr>
+       
+        </table>
       
       </div>
 
@@ -522,41 +895,110 @@ function ShowTableOtros() {
         Contacto
     </h1>
 
-    <br>
+   
     <h2>
-      ¿Tiene alguna duda? Contactenos!
+      ¿Tiene alguna duda o sugerencia? Contactenos!
     </h2>
 
 <br>
     <div class ="row">
 
-      <div class="col">
+      <div class="col-sm-4">
 
           <div>  
-              <img style='vertical-align:middle;width:100px;color:white' src="img/Phone.png">
               
-              <div style='vertical-align:middle; display:inline;color:white'>
-                809-586-6125
+
+              <div style='vertical-align:middle; color:white'>
+                <img style='vertical-align:middle;width:80px;color:white' src="img/Phone.png">
+                <a href="tel:+18095866125" style="color:white;">809-586-6125</a>
               </div>
         
-              <img style='vertical-align:middle;width:100px;' src="img/Location.png">
-              
-              <div style='vertical-align:middle; display:inline;'>
+              <div style='vertical-align:middle;'>
                 
                
-                  <a  target="_blank" rel="noopener noreferrer" href="https://goo.gl/maps/oZaJcNL6sS9qGH6HA">
+                  <a  target="_blank" rel="noopener noreferrer" href="https://goo.gl/maps/oZaJcNL6sS9qGH6HA" style="color:white;">
+                    <img style='vertical-align:middle;width:80px;' src="img/Location.png">
                     Av Manolo Tavarez Justo No. 2
                   </a>
                 
                 
               </div>
-        
+
+
+
+              <div style='vertical-align:middle;color:white'>
+
+              <br>
+             
+             <h3 style="color:white">
+              Horario
+              <img style='vertical-align:middle;width:80px;' src="img/Horario.png">
+             </h3> 
+             
+             <br>
+              <p style="color:white">
+                Lunes a Sabados de 7:00 AM - 6:00 PM - Corrido
+
+              </p><br>
+
+
+            </div>
         
         </div>
-        
+
+     
 
       </div>
-    </div>
+
+  
+            <div class="col-md-8">
+                <div class="well well-sm">
+                    <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name">
+                                    Nombre</label>
+                                <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre" required="required" />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">
+                                    Correo Electronico</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                    </span>
+                                    <input type="email" class="form-control" id="email" placeholder="Ingrese su correo" required="required" /></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">
+                                    Subjeto</label>
+                                <select id="subject" name="subject" class="form-control" required="required">
+                                    <option value="na" selected="">Elija uno:</option>
+                                    <option value="service">Articulo</option>
+                                    <option value="suggestions">Sugerencias</option>
+                             
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name">
+                                    Mensaje</label>
+                                <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                                    placeholder="Mensaje"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-success pull-right" id="btnContactUs">
+                                Enviar</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+
+
+      
 
   
 
@@ -579,16 +1021,13 @@ function ShowTableOtros() {
     
 </body>
 
-<!-- Latest compiled and minified CSS -->
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-
-<!-- Popper JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 
 </html>

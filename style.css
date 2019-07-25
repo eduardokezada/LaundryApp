@@ -10,6 +10,7 @@ html {
   p{
     
     color:black;
+    text-align:center;
   }
 
 
@@ -22,6 +23,7 @@ h1{
     text-align:center;
  color:white;
  
+
 }
 
 h2{
@@ -38,49 +40,96 @@ h3{
  
 }
 
+.col{
+ 
 
-
-
-.btn-primary{
-
-margin-right:100%;
-margin-bottom:20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 }
 
+.col-sm{
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.container-fluid{
+  
+  background:silver;
+overflow:hidden;
+
+
+}
+
+/**BTN Primary**/
+.btn{
+  border-radius:1px;
+}
+
+.btn .btn-primary:hover{
+  background-color: white;
+  border-color:white;
+}
+
+.btn-primary:focus{
+  background: linear-gradient(to top, #00ff00 0%, #00cc00 58%);
+  border-color:black;
+}
+
+.btn-primary:active{
+  background-color: red;
+  border-color:red;
+  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.075) inset, 0 0 8px rgba(114, 96, 153, 0.6);
+  outline: 0 none;
+}
+.btn-primary:not(:disabled):not(.disabled):active{
+color: red;
+background: green;
+border-color: yellow;
+outline: 0 none;
+}
+
+.btn-primary:not(:disabled):not(.disabled):focus{
+box-shadow: 0 0 5px white;
+}
 .Icon{
+text-align:right;
+ float:left;
+  width:20%;
 
-  border-radius:90%;
-  width:50px;
-  border:solid 1px white;
-  background:white;
+}  
+
+
+#Boton{
+
+   
+  width: 80%;
+  margin-left:50px; 
+  margin-bottom:10px;
+
 }
 
 
-
+/*Secciones de la pagina*/
   #Servicios{
     padding:2%;
     background: #66ccff;
-   
+    border-left:solid 1px black;
+    border-right:solid 1px black;
   }
 
-
- .col{
-  
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-  }
 
 #Precios{
-  padding : 2%;
- 
- background:#c0c0c0;
 
+ background: #E8E8E8;
+ padding:10px 10px 10px 10px ;
+ border:solid 1px black;
 }
-
 
 
 #Contacto{
@@ -89,19 +138,9 @@ margin-bottom:20px;
 
 }
 
-.card-img-top{
-
- 
-  width:100px;
-  height:250px;
-}
-.container-fluid{
-  padding: 0px;
-    background:silver;
- overflow:hidden;
-}
 
 
+/* Tablas*/
 #Camisas{
 
   display:block;
@@ -119,11 +158,21 @@ margin-bottom:20px;
   display:none;
 }
 
+#Accesorios{
 
+  display:none;
+}
+
+#Hogar{
+
+  display:none;
+}
 #Otros{
 
   display:none;
 }
+
+/*Brra de Navegación*/
   .navbar{
 
     
@@ -132,43 +181,66 @@ margin-bottom:20px;
   opacity:0.9;
       
     }
+
+    .navbar-nav>li:hover{
+      
+      border-bottom: solid 2px #ff5050;
+      }
+      
+      .navbar-nav > li{
+       
+        display: inline-block;
+       color:#0EA0D0 ;
+       padding:3px;
+      
+      }
+      
+      
+      nav .navbar-nav li a{
+        color: black ;
+     
+        }
+      
+        nav .navbar-nav li a:hover{
+          color: #0EA0D0 ;
+          }
+
+    nav .navbar-toggler{
+       border: solid 1px silver;
+     }
+
+     .navbar .navbar-toggler-icon{
+       background-image: url("./img/Show.png")!important;
+       }
     
 
+
+       /*Cartas de Servicios*/
+    .card-img-top{
+
+ 
+      width:100px;
+      height:250px;
+ 
+   
+    }
     .card{
       padding:1px;
+      margin-bottom:10px;
+      box-shadow:2px 2px 2px 2px grey;
     }
+
+
     .card:hover{
       
-        border:solid 1px #ff5050;
+        border:solid 1px white;
       background: linear-gradient(to right, #66ccff 0%, #0066cc 100%);
         color:white;
-        
+     
         }
 
 
 
-    .navbar-nav>li:hover{
-      
-       border-bottom: solid 2px #ff5050;
-       }
-       
-       .navbar-nav > li{
-        
-         display: inline-block;
-        color:white;
-        padding:3px;
-       
-       }
-       
-       
-       nav .navbar-nav li a{
-         color: black ;
-      
-         }
-       
-         nav .navbar-nav li a:hover{
-           color: #0EA0D0 ;
-           }
 
 
-        
+  
